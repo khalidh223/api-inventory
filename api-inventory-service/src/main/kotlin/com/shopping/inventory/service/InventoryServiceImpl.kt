@@ -8,7 +8,10 @@ class InventoryServiceImpl(
     private val inventoryRepository: InventoryRepository
 ) : InventoryService {
     override fun isInStock(skuCode: String): Boolean {
-        return inventoryRepository.existsBySkuCode(skuCode)
+        val savedInventoryEntity = inventoryRepository.findBySkuCode(skuCode) ?: return false
+        if (savedInventoryEntity.quantity == 0) {
+            return false
+        }
+        return true
     }
-
 }

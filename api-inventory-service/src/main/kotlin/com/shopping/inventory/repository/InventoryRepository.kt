@@ -4,5 +4,5 @@ import com.shopping.inventory.domain.InventoryEntity
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface InventoryRepository : JpaRepository<InventoryEntity, Long> {
-    fun existsBySkuCode(skuCode: String): Boolean
+    fun findBySkuCode(skuCode: String): InventoryEntity?
 }

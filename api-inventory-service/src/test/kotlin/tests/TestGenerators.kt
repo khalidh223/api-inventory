@@ -11,7 +11,7 @@ fun Gen.Companion.inventoryEntity() = object : Gen<InventoryEntity> {
 
     override fun random(): Sequence<InventoryEntity> = generateSequence {
         InventoryEntity(
-            skuCode = string().random().first().take(8),
+            skuCode = "abcabcab",
             quantity = Arb.int(1, 127).next()
         )
     }
