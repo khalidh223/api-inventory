@@ -1,5 +1,8 @@
 package com.shopping.inventory.service
 
+import com.shopping.inventory.model.InventoryRequest
+
 interface InventoryService {
-    fun isInStock(skuCode: String): Boolean
+    fun productIsInStock(skuCode: String): Boolean
+    fun productsAreInStock(skuCodeList: List<String>): Boolean
 }
