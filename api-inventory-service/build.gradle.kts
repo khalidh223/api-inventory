@@ -44,6 +44,8 @@ dependencies {
     testImplementation("org.testcontainers:mysql")
     implementation("io.kotlintest:kotlintest-core:3.4.2")
     implementation("io.kotest:kotest-property-jvm:5.5.4")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-jackson:2.9.0")
     implementation(project(":api-inventory-client"))
 }
 
